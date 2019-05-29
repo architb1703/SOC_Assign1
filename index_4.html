@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Assignment-1</title>
+        <style>
+            h1{
+                text-align: center;
+            }
+            #search-btn{
+                background-color: white;
+                border: 2px solid black;
+                padding: 5px;
+                border-radius: 15px;
+                outline: none;
+            }
+            #search-btn:hover{
+                background-color: black;
+                color: aliceblue;
+            }
+            #text-url{
+                border-radius: 15px;
+                outline: none;
+                padding: 5px 10px 5px 10px;
+                border: 1px solid black;
+                margin-right: 10px;
+                background-color: aliceblue;
+                width: 15%;
+            }
+            #text-url:focus{
+                border: 2px solid black;
+            }
+        </style>
+        <script>
+            function browse(){
+                document.getElementById("sub-box").src=document.getElementById("text-url").value;
+            }  
+        </script>
+    </head>
+    <body>
+        <h1>My First Sub-Window</h1>
+        <form>
+            <b>Search:</b>
+            <input type="text" id="text-url">
+            <input type="button" value="GO" onclick="browse();" id="search-btn">
+        </form>
+        <div>
+            <iframe src="" style="width: 100%; height: 90%; border: 2px solid black; overflow: hidden;" id="sub-box"></iframe>
+        </div>
+    </body>
+</html>

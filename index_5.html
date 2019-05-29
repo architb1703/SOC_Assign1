@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <title>Assignment-1</title>
+        <style>
+            h1{
+                text-align: center;
+            }
+            #search-btn{
+                background-color: white;
+                border: 2px solid black;
+                padding: 5px;
+                border-radius: 15px;
+                outline: none;
+            }
+            #search-btn:hover{
+                background-color: black;
+                color: aliceblue;
+            }
+            #text-url{
+                border-radius: 15px;
+                outline: none;
+                padding: 5px 10px 5px 10px;
+                border: 1px solid black;
+                margin-right: 10px;
+                background-color: aliceblue;
+                width: 65%;
+            }
+            #text-url:focus{
+                border: 2px solid black;
+            }
+            #search{
+                float: left;
+            }
+            #resize{
+                float: right;
+            }
+        </style>
+        <script>
+            function browse(){
+                document.getElementById("sub-box").src=document.getElementById("text-url").value;
+            }
+            function size_width(){
+                var ifr=document.getElementById("sub-box");
+                ifr.style.width=document.getElementById("width").value+"px";
+                console.log(ifr.style.width);
+            }
+            function size_height(){
+                var ifr=document.getElementById("sub-box");
+                ifr.style.height=document.getElementById("height").value+"px";
+                console.log(ifr.style.height);
+            }  
+        </script>
+    </head>
+    <body>
+        <div>
+        <h1>My First Sub-Window</h1>
+        <form id="search">
+            <b>Search:</b>
+            <input type="text" id="text-url">
+            <input type="button" value="GO" onclick="browse();" id="search-btn">
+        </form>
+        <form id="resize">
+                Resize: &nbsp;
+                <input type="number" placeholder="width" onchange="size_width();" id="width"> px 
+                <input type="number" placeholder="height" onchange="size_height();" id="height"> px
+        </form>
+        </div><br><br>
+        <div>
+            <iframe src="https://www.google.com/webhp?igu=1" style="width: 100%; height: 85%; border: 2px solid black; overflow: hidden;" id="sub-box"></iframe>
+        </div>
+    </body>
+</html>
